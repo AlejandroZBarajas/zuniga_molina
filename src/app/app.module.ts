@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CharactersModuleModule } from './characters-module/characters-module.module';
+import { PlanetsModuleModule } from './planets-module/planets-module.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { CharactersModuleModule } from './characters-module/characters-module.mo
     HttpClientModule,
     FormsModule,
     CharactersModuleModule,
+    PlanetsModuleModule,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

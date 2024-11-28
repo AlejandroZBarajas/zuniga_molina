@@ -1,6 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { CharacterI } from '../interfaces/character-i';
+
 import { Transformation } from '../../trans/class/transformation';
+
+import { PlanetsModalComponent } from '../../planets-module/planets-modal/planets-modal.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +12,12 @@ import { Router } from '@angular/router';
   styleUrl: './characters-card.component.css',
 })
 export class CharactersCardComponent {
-  @Input() characterData: CharacterI | undefined;
+  constructor(private router: Router) {}
 
+  @Input() characterData: CharacterI | undefined;
+  @ViewChild(PlanetsModalComponent) planetsModal!: PlanetsModalComponent;
+
+  navigatetoTransforms(characterId: number | undefined) {}
 
 constructor(private router: Router) {}
 
@@ -21,4 +28,9 @@ constructor(private router: Router) {}
     localStorage.setItem("id", id.toString())
   }
   
+
+  openModalPlanet(): void {
+    this.planetsModal.openModal(this.characterData?.id);
+  }
+
 }
