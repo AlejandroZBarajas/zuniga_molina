@@ -1,0 +1,91 @@
+.card {
+  display: flex;
+  border: 1px solid #ddd; /* Cambia a un color más suave */
+  border-radius: 12px; /* Bordes redondeados */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 16px auto;
+  max-width: 800px; /* Limita el ancho máximo de las tarjetas */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto hover */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Pequeño aumento en hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.card-image {
+  flex: 1;
+  max-width: 200px; /* Imagen más grande */
+  height: auto;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 12px; /* Bordes redondeados de la imagen */
+  border-bottom-left-radius: 12px;
+}
+
+.card-content {
+  flex: 2;
+  padding: 16px;
+  display: flex;
+  flex-direction: column; /* Distribuye los elementos verticalmente */
+  justify-content: space-between; /* Espaciado entre elementos */
+}
+
+.card-content h2 {
+  margin: 0 0 12px;
+  font-size: 1.8rem; /* Título más destacado */
+  color: #333; /* Texto oscuro */
+  font-weight: bold;
+}
+
+.card-content p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555; /* Texto más suave */
+}
+
+.card-content p strong {
+  color: #333; /* Resalta los títulos */
+}
+
+.card-buttons {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.card-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.card-buttons button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-buttons button:first-child:hover {
+  background-color: #0056b3;
+}
+
+.card-buttons button:last-child {
+  background-color: #6c757d;
+  color: white;
+}
+
+.card-buttons button:last-child:hover {
+  background-color: #5a6268;
+}
