@@ -11,11 +11,16 @@
     <p><strong>Affiliation:</strong> {{ characterData?.affiliation }}</p>
     <p><strong>Description:</strong> {{ characterData?.description }}</p>
     <div class="card-buttons">
-      <button (click)="navigatetoTransforms(characterData?.id)">
+     <button (click)="toTransformation(this.characterData?.id?.toString())">Ver transformaciones</button>
+  
         Ver transformaciones
       </button>
       <button (click)="openModalPlanet()">Ver Planeta de origen</button>
     </div>
   </div>
+
+  
+=======
+
 </div>
 <app-planets-modal></app-planets-modal>
