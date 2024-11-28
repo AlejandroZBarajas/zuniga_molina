@@ -3,7 +3,10 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PlanetResponseI } from '../interfaces/planet-response-i';
-import { CharacterResponseI, CharactersResponseI } from '../../characters-module/interfaces/charactersResponse-i';
+import {
+  CharacterResponseI,
+  CharactersResponseI,
+} from '../../characters-module/interfaces/charactersResponse-i';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +21,7 @@ export class PlanetsServiceService {
   }
 
   getCharacterWithPlanet(
-    characterId: number | undefined
+    characterId: number | undefined | null
   ): Observable<CharacterResponseI> {
     return this.http.get<CharacterResponseI>(
       `${this.apiUrl}/characters/${characterId}`
