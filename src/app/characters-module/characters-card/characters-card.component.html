@@ -10,6 +10,12 @@
     <p><strong>Gender:</strong> {{ characterData?.gender }}</p>
     <p><strong>Affiliation:</strong> {{ characterData?.affiliation }}</p>
     <p><strong>Description:</strong> {{ characterData?.description }}</p>
+    <div class="card-buttons">
+      <button (click)="navigatetoTransforms(characterData?.id)">
+        Ver transformaciones
+      </button>
+      <button (click)="openModalPlanet()">Ver Planeta de origen</button>
+    </div>
   </div>
-  <button (click)="navigatetoTransforms(characterData?.name)">Ver trasformaciones</button>
 </div>
+<app-planets-modal></app-planets-modal>
