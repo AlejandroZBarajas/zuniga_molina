@@ -11,5 +11,6 @@
     <p><strong>Affiliation:</strong> {{ characterData?.affiliation }}</p>
     <p><strong>Description:</strong> {{ characterData?.description }}</p>
   </div>
-  <button (click)="navigatetoTransforms(characterData?.name)">Ver trasformaciones</button>
+  <button (click)="toTransformation(this.characterData?.id?.toString())">Ver transformaciones</button>
+  
 </div>

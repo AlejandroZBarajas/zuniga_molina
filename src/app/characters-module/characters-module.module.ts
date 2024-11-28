@@ -4,9 +4,10 @@ import { CharactersPageComponent } from './characters-page/characters-page.compo
 import { CharactersCardComponent } from './characters-card/characters-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TransModule } from '../trans/trans.module';
 
 @NgModule({
   declarations: [CharactersPageComponent, CharactersCardComponent],
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, TransModule],
 })
 export class CharactersModuleModule {}
