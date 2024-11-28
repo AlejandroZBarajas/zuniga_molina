@@ -5,8 +5,10 @@ import { CharactersCardComponent } from './characters-card/characters-card.compo
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { PlanetsModuleModule } from '../planets-module/planets-module.module';
+
 @NgModule({
   declarations: [CharactersPageComponent, CharactersCardComponent],
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, PlanetsModuleModule],
 })
 export class CharactersModuleModule {}
