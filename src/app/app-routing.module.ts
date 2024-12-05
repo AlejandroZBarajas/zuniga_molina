@@ -6,7 +6,7 @@ import { TransformationPageComponent } from './trans/components/transformation-p
 const routes: Routes = [
   { path: '', redirectTo: '/characters', pathMatch: 'full' },
   { path: 'characters', component: CharactersPageComponent },
-  { path: 'transformations/:id', component: TransformationPageComponent },
+  { path: 'transformations', component: TransformationPageComponent },
 ];
 
 @NgModule({

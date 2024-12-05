@@ -22,7 +22,7 @@ export class CharactersCardComponent {
   toTransformation(id: number | undefined): void {
     if (id) {
       localStorage.setItem("charID", id.toString())
-      this.router.navigate(["/transformations"]); 
+      this.router.navigate(["transformations"]); 
     } else {
       console.warn('El ID no está definido');
     }

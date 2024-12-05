@@ -1,6 +1,7 @@
 <div *ngIf="filteredTransformations.length > 0">
-  <app-transform-card 
-    *ngFor="let transformation of filteredTransformations"
-    [transformation]="transformation">
-  </app-transform-card>
+  <ul>
+    <li *ngFor="let transformation of filteredTransformations">
+      {{ transformation.name }} - KI: {{ transformation.ki }}
+    </li>
+  </ul>
 </div>

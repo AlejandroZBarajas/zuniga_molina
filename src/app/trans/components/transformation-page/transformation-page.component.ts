@@ -17,6 +17,7 @@ export class TransformationPageComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  /*   
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     
@@ -34,4 +35,19 @@ export class TransformationPageComponent implements OnInit {
       console.error('ID no encontrado en la URL');
     }
   }
+  */
+
+ngOnInit():void {
+  this.transformationService.getTransformations().subscribe({
+    next: (transformationIds: number[]) => {
+      console.log('IDs de transformaciones:', transformationIds);
+
+      // Aquí puedes implementar más lógica si necesitas procesar los IDs.
+    },
+    error: (err) => {
+      console.error('Error al obtener transformaciones:', err);
+    },
+  });
+}
+
 }
