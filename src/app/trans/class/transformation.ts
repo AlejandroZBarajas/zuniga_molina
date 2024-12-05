@@ -1,20 +1,17 @@
   export class Transformation {
-    id: number;
-    ki:number;
+
+    ki:string;
     name: string;
     image: string;
-    characterName: string; // Nueva propiedad para asociar la transformación con un personaje
+    description: string 
   
     constructor(data: Partial<Transformation>) {
-      this.id = data.id || 0;
-      this.ki = data.ki || 0 
+
+      this.ki = data.ki || ""
       this.name = data.name || '';
       this.image = data.image || '';
-      this.characterName = data.characterName || ''; // Inicializa con un valor por defecto
+      this.description = data.description || ''
     }
-  
-    getInformation(): string {
-      return `${this.id}, ${this.name}, ${this.ki} ${this.image}, ${this.characterName}`;
-    }
+
   }
   

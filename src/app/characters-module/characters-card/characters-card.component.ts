@@ -15,13 +15,14 @@ export class CharactersCardComponent {
   @Input() characterData: CharacterI | undefined;
   @ViewChild(PlanetsModalComponent) planetsModal!: PlanetsModalComponent;
 
-  navigatetoTransforms(characterId: number | undefined) {}
-
   private transformations: Transformation[] = [];
+  
+  //navigatetoTransforms(characterId: number | undefined) {}
 
   toTransformation(id: number | undefined): void {
     if (id) {
-      this.router.navigate([`/transformations`, id]); 
+      localStorage.setItem("charID", id.toString())
+      this.router.navigate(["/transformations"]); 
     } else {
       console.warn('El ID no está definido');
     }

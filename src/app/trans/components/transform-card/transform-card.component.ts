@@ -1,26 +1,27 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Transformation } from '../../class/transformation';
+import { ActivatedRoute } from '@angular/router';
+import { TransformationsService } from '../../services/transformations.service';
 
 @Component({
   selector: 'app-transform-card',
   templateUrl: './transform-card.component.html',
-  styleUrls: ['./transform-card.component.css'], // Nota: styleUrls en plural
+  styleUrls: ['./transform-card.component.css'], 
 })
 export class TransformCardComponent implements OnInit{
-  // Propiedad que recibe datos del padre
-  @Input() transformationData: Transformation | undefined;
+  @Input() transformation: Transformation = new Transformation({
+    name: '',
+    ki: '',
+    description: '',
+    image: '',
+  });
+
+  constructor(
+    private route: ActivatedRoute,
+    private transformationService: TransformationsService
+  ) {}
 
   ngOnInit(): void {
-      console.log("entra al transformations page")
-  }
-
-  // Puedes agregar métodos adicionales si es necesario
-  getTransformationInfo(): string {
-    if (!this.transformationData) {
-      return 'No transformation data available';
-    }
-    console.log(this.transformationData.getInformation())
-    return this.transformationData.getInformation();
-
+    console.log('Transformación recibida:', this.transformation);
   }
 }

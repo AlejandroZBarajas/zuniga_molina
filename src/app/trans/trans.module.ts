@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TransformCardComponent } from './components/transform-card/transform-card.component';
 import { TransformationPageComponent } from './components/transformation-page/transformation-page.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { TransformationPageComponent } from './components/transformation-page/tr
     TransformationPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     TransformCardComponent,

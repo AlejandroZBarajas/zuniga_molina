@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; // Para obtener parámetros de la URL
+import { ActivatedRoute } from '@angular/router';
 import { TransformationsService } from '../../services/transformations.service';
 import { Transformation } from '../../class/transformation';
-import { Input } from '@angular/core';
-import { PlanetsServiceService } from '../../../planets-module/services/planets-service.service';
-import { TransformationI } from '../../../characters-module/interfaces/charactersResponse-i';
 
 @Component({
   selector: 'app-transformation-page',
@@ -12,27 +9,29 @@ import { TransformationI } from '../../../characters-module/interfaces/character
   styleUrls: ['./transformation-page.component.css'],
 })
 export class TransformationPageComponent implements OnInit {
-  transformations: TransformationI[] = [];
-  characterId: number | null = null;
-
-  public filteredTransformations: Transformation[] = [];
-  public characterName: string | null = null;
+  filteredTransformations: Transformation[] = [];
+  characterId: string | null = null;
 
   constructor(
     private transformationService: TransformationsService,
-    private route: ActivatedRoute,
-    private planetsService: PlanetsServiceService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const id = params.get('id');
-      this.characterId = id ? +id : null;
-      this.planetsService
-        .getCharacterWithPlanet(this.characterId)
-        .subscribe((character) => {
-          this.transformations = character.transformations;
-        });
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    
+    if (id) {
+      // Obtener las transformaciones del personaje con el ID
+      this.transformationService.getAllById(id).subscribe({
+        next: (transformations) => {
+          this.filteredTransformations = transformations;
+        },
+        error: (err) => {
+          console.error('Error al obtener transformaciones:', err);
+        },
+      });
+    } else {
+      console.error('ID no encontrado en la URL');
+    }
   }
 }

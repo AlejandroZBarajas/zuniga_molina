@@ -15,6 +15,7 @@ export class CharactersPageComponent implements OnInit {
   inputValue: string = '';
 
   ngOnInit(): void {
+    localStorage.clear()
     this.charactersService.getCharactersResponse().subscribe((response) => {
       this.charactersResponse = response;
     });

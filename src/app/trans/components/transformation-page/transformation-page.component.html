@@ -1,16 +1,6 @@
-<!-- <div class="transformation-card">
-    <div class="transformation-image">
-      <img [src]="transformationData?.image" [alt]="transformationData?.name" />
-    </div>
-    <div class="transformation-content">
-      <h2>{{ transformationData?.name }}</h2>
-      <p><strong>Power Level:</strong> {{ transformationData?.ki }}</p>
-
-    </div>
-  </div>
-   -->
-
-   <div *ngFor="let transformation of filteredTransformations">
-    <app-transform-card [transformationData]="transformation"></app-transform-card>
-  </div>
-  
+<div *ngIf="filteredTransformations.length > 0">
+  <app-transform-card 
+    *ngFor="let transformation of filteredTransformations"
+    [transformation]="transformation">
+  </app-transform-card>
+</div>
