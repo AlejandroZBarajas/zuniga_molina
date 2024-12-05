@@ -1,23 +1,23 @@
 .card {
   display: flex;
-  border: 1px solid #ddd; /* Cambia a un color más suave */
-  border-radius: 12px; /* Bordes redondeados */
+  border: 1px solid #ddd; 
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 16px auto;
-  max-width: 800px; /* Limita el ancho máximo de las tarjetas */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto hover */
-  background-color: #fff; /* Fondo blanco */
+  max-width: 800px; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  background-color: #fff; 
 }
 
 .card:hover {
-  transform: scale(1.02); /* Pequeño aumento en hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transform: scale(1.02); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .card-image {
   flex: 1;
-  max-width: 200px; /* Imagen más grande */
+  max-width: 200px; 
   height: auto;
   overflow: hidden;
 }
@@ -26,7 +26,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 12px; /* Bordes redondeados de la imagen */
+  border-top-left-radius: 12px; 
   border-bottom-left-radius: 12px;
 }
 
@@ -34,14 +34,14 @@
   flex: 2;
   padding: 16px;
   display: flex;
-  flex-direction: column; /* Distribuye los elementos verticalmente */
-  justify-content: space-between; /* Espaciado entre elementos */
+  flex-direction: column; 
+  justify-content: space-between; 
 }
 
 .card-content h2 {
   margin: 0 0 12px;
-  font-size: 1.8rem; /* Título más destacado */
-  color: #333; /* Texto oscuro */
+  font-size: 1.8rem; 
+  color: #333; 
   font-weight: bold;
 }
 
@@ -49,11 +49,11 @@
   margin: 6px 0;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #555; /* Texto más suave */
+  color: #555; 
 }
 
 .card-content p strong {
-  color: #333; /* Resalta los títulos */
+  color: #333; 
 }
 
 .card-buttons {

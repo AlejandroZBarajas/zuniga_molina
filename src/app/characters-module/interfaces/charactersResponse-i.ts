@@ -23,7 +23,7 @@ export interface CharacterResponseI {
 }
 
 export interface TransformationI {
-  id: number;
+  id: number | undefined;
   name: string;
   image: string;
   ki: string;
